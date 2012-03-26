@@ -170,16 +170,16 @@ if [ -d $CACHE_STORE_DIR ]; then
   cp -R $CACHE_STORE_DIR/* $CACHE_TARGET_DIR/
 
   # move existing node_modules back into place
-  if [ -d $TEMP_NODE_MODULES_DIR/node_modules ]; then
-    cp -R $TEMP_NODE_MODULES_DIR/node_modules/* $CACHE_TARGET_DIR/
-  fi
+  #if [ -d $TEMP_NODE_MODULES_DIR/node_modules ]; then
+  #  cp -R $TEMP_NODE_MODULES_DIR/node_modules/* $CACHE_TARGET_DIR/
+  #fi
 
 fi
 
 # install dependencies with npm
 echo "-----> Installing dependencies with npm"
 run_npm "install --production"
-run_npm "rebuild"
+#run_npm "rebuild"
 echo "Dependencies installed" | indent
 
 # repack cache with new assets
